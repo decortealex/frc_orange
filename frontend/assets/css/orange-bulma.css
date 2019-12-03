@@ -9495,10 +9495,10 @@ label.dropdown {
     transition: background 0.15s ease-in-out;
 }
 .range-slider__range::-webkit-slider-thumb:hover {
-    background: #1abc9c;
+    background: #ff5e4d;
 }
 .range-slider__range:active::-webkit-slider-thumb {
-    background: #1abc9c;
+    background: #ff5e4d;
 }
 .range-slider__range::-moz-range-thumb {
     width: 20px;
@@ -9515,9 +9515,7 @@ label.dropdown {
 .range-slider__range:active::-moz-range-thumb {
     background: #ff5e4d;
 }
-.range-slider__range:focus::-webkit-slider-thumb {
-    box-shadow: 0 0 0 3px #fff, 0 0 0 6px #1abc9c;
-}
+
 .range-slider__value {
     display: inline-block;
     position: relative;
@@ -9667,8 +9665,8 @@ input::-moz-focus-inner, input::-moz-focus-outer {
     width: 20px !important;
     height: 20px;
     border-radius: 50%;
-    left: -7px;
-    top: -5px;
+    /* left: -7px;
+    top: -5px; */
     background-color: #ff5e4d;
   }
   /* Styling;
