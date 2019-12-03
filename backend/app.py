@@ -11,9 +11,16 @@ def index():
 
 @app.route("/test", methods=["POST"])
 def test():
-    name_of_slider = request.form["name_of_slider"]
-    print(name_of_slider)
-    return render_template('index.html', slider = name_of_slider)
+    
+    clicked=None
+    if request.method == "POST":
+        
+        data = request.get_json()
+        print(data)
+
+        
+    
+    return render_template('index.html')
 
 if __name__ == '__main__':
     app.run()

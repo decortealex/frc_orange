@@ -1,7 +1,7 @@
 <html>
     <head>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-        
+
     </head>
     <body>
         <style>
@@ -42,7 +42,14 @@
 <script>
 $(document).on('input', '#slider', function() {
     $('#slider_value').html( $(this).val() );
-    console.log($(this).val())
+    var clicked = $(this).val() 
+   
+    $.ajax({
+        type : 'POST',
+        url : "/test",
+        contentType: 'application/json;charset=UTF-8',
+        data: JSON.stringify ({data : clicked}),
+    });
 });
 
 </script>
