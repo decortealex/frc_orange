@@ -13,6 +13,7 @@ def json_parse(data):
     data = json.dumps(data)
     data = json.loads(data)
     return(data)
+    
 @app.route("/test", methods=["POST"])
 def test():
     clicked=None
@@ -21,6 +22,7 @@ def test():
         data = json_parse(data)
         print(data['data'])
     return "nothing"
+
 @app.route("/dropdown", methods=["POST"])
 def dropdown():
     clicked=None
