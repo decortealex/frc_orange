@@ -5,6 +5,10 @@ import cv2
 class Camera:
     def __init__(self, port):
         self.cam = cv2.VideoCapture(port)
+        
+
+    def quit(self):
+        self.cam.release()
 
 
     def get_frame(self):

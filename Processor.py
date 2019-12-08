@@ -9,6 +9,14 @@ class Processor:
     def __init__(self, camera, boundary):
         self.bound_val = boundary
         self.cam = camera
+        self.frame = self.cam.get_frame()
+
+
+    def display_img(self):
+        cv2.namedWindow('image')
+        box = self.draw_cnts()
+
+        cv2.imshow('image', self.frame)
 
 
     def set_thresh_val(val):
@@ -17,7 +25,8 @@ class Processor:
 
 
     def draw_cnts(self):
-        image = self.cam.get_frame()
+        self.frame = self.cam.get_frame()
+        image = self.frame
         image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         _, thresh = cv2.threshold(image, 200, 255, cv2.THRESH_BINARY)
 
@@ -34,7 +43,7 @@ class Processor:
             # get_cnt_area(box)
             # cv2.imshow('threshold', thresh)
             # print(box)
-            cv2.drawContours(frame, [box], 0, (0, 255, 0), 2)
+            cv2.drawContours(self.frame, [box], 0, (0, 255, 0), 2)
             return box
             # print(x,y,w,h)   
             # cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 2)

@@ -38,9 +38,12 @@ def set_center(event, x, y, flags, param):
 # cv2.destroyAllWindows()
 
 while(1):
-    cv2.namedWindow('image')
-    cv2.setMouseCallback('image', set_center)
+    p.display_img()
 
-    box = p.draw_cnts()
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+cam.quit()
+cv2.destroyAllWindows()
 
 
